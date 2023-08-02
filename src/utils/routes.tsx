@@ -1,20 +1,21 @@
-import {lazy} from 'react';
+import { lazy } from "react";
+import { RouteType } from "@/utils/types.ts";
 
 export enum ROUTES {
-    MAIN = '/',
-    ABOUT = '/about'
+  MAIN = "/",
+  ABOUT = "/about",
 }
 
-const HomeAsync = lazy(() => import('../pages/Home'));
-const AboutAsync = lazy(() => import('../pages/About'));
+const Home = lazy(() => import("@/pages/Home"));
+const About = lazy(() => import("@/pages/About"));
 
-export const routes = [
-    {
-        path: ROUTES.MAIN,
-        element: <HomeAsync/>,
-    },
-    {
-        path: ROUTES.ABOUT,
-        element: <AboutAsync/>,
-    },
+export const routes: RouteType = [
+  {
+    path: ROUTES.MAIN,
+    element: <Home />,
+  },
+  {
+    path: ROUTES.ABOUT,
+    element: <About />,
+  },
 ];
